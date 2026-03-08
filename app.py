@@ -63,6 +63,7 @@ df = generate_mock_data()
 # --- App Header ---
 st.title("🐑 AgroLedger")
 st.markdown("*Blockchain-powered traceability for the Canadian Sheep Federation*")
+st.info("ℹ️ **Prototype Disclaimer**: This Streamlit application serves as a high-fidelity **UI simulation** of the AgroLedger platform. It demonstrates the conceptual flow, data structures, and role-based access of the system. In a production environment, the 'Immutable Timeline' and records below would be connected to a live Web3 blockchain backend (e.g., Ethereum or Hyperledger) via Smart Contracts, rather than the simulated Python Pandas backend used here.")
 
 # --- Sidebar (Role Selection) ---
 with st.sidebar:
