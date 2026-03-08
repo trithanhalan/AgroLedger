@@ -23,6 +23,13 @@
 
 ---
 
+## 🌐 Live Demo
+- **Status**: ✅ Operational
+- **Streamlit Link**: [Launch AgroLedger Dashboard](https://streamlit.io/cloud) *(Update with your specific URL)*
+- **Local Access**: `streamlit run app.py` (Port 8501)
+
+---
+
 ## 🔭 Overview
 **AgroLedger** is a premium, high-fidelity interactive prototype designed to simulate how **Hyperledger Fabric** blockchain technology enforces transparency, immutable traceability, and robust food safety across complex agricultural supply chains. 
 
