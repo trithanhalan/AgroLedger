@@ -75,11 +75,11 @@ edges = []
 if not df.empty:
     # Add Nodes
     for farm in df["Origin Farm"].dropna().unique():
-        nodes.append( Node(id=farm, label=farm, size=25, color="#7C8C03") )
+        nodes.append( Node(id=farm, label=farm, size=25, color="#7C8C03", font={'color': 'white'}) )
     for proc in df["Processor"].dropna().unique():
-        nodes.append( Node(id=proc, label=proc, size=25, color="#695D46") )
+        nodes.append( Node(id=proc, label=proc, size=25, color="#695D46", font={'color': 'white'}) )
     for ret in df["Retailer"].dropna().unique():
-        nodes.append( Node(id=ret, label=ret, size=25, color="#A3B18A") )
+        nodes.append( Node(id=ret, label=ret, size=25, color="#A3B18A", font={'color': 'white'}) )
         
     # Add Edges
     edge_set = set()
