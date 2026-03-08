@@ -6,30 +6,36 @@ import random
 def get_theme_css():
     return """
     <style>
-    /* AgroLedger Brand Colors */
+    /* AgroLedger Brand Colors with High Contrast Adjustments */
     :root {
-        --primary-olive: #7C8C03;
-        --earth-brown: #695D46;
+        --primary-olive: #9ab004; /* Lightened for dark mode readability */
+        --earth-brown: #8f7f60; /* Lightened for better contrast */
         --bg-dark: #0E1117;
         --card-bg: #1A1C23;
+        --text-light: #FFFFFF;
     }
-    .main {background-color: var(--bg-dark);}
+    .main {background-color: var(--bg-dark); color: var(--text-light);}
     h1, h2, h3 {color: var(--primary-olive);}
+    p, span, div, label {color: var(--text-light) !important;}
     .stMetric {background-color: var(--card-bg); padding: 15px; border-radius: 10px; border: 1px solid var(--earth-brown);}
+    .stMetric label {color: #b0b0b0 !important;}
+    .stMetric [data-testid="stMetricValue"] {color: var(--primary-olive) !important;}
     /* Stylish buttons */
     .stButton>button {
         background-color: var(--primary-olive);
-        color: white;
+        color: var(--bg-dark) !important;
+        font-weight: bold;
         border: none;
     }
     .stButton>button:hover {
         background-color: var(--earth-brown);
-        color: white;
+        color: var(--bg-dark) !important;
     }
     /* Info box */
     .stAlert {
         background-color: var(--card-bg);
         border: 1px solid var(--earth-brown);
+        color: var(--text-light);
     }
     </style>
     """

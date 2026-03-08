@@ -82,17 +82,19 @@ if not df.empty:
         nodes.append( Node(id=ret, label=ret, size=25, color="#A3B18A") )
         
     # Add Edges
+    edge_set = set()
     for idx, row in df.iterrows():
         if pd.notna(row['Origin Farm']) and pd.notna(row['Processor']):
-            # Avoid duplicate edges
-            new_edge = Edge(source=row['Origin Farm'], target=row['Processor'], type="CURVE_SMOOTH")
-            if not any((e.source == new_edge.source and e.target == new_edge.target) for e in edges):
-                edges.append(new_edge)
+            edge_tuple = (row['Origin Farm'], row['Processor'])
+            if edge_tuple not in edge_set:
+                edges.append(Edge(source=edge_tuple[0], target=edge_tuple[1], type="CURVE_SMOOTH"))
+                edge_set.add(edge_tuple)
                 
         if pd.notna(row['Processor']) and pd.notna(row['Retailer']):
-            new_edge = Edge(source=row['Processor'], target=row['Retailer'], type="CURVE_SMOOTH")
-            if not any((e.source == new_edge.source and e.target == new_edge.target) for e in edges):
-                edges.append(new_edge)
+            edge_tuple = (row['Processor'], row['Retailer'])
+            if edge_tuple not in edge_set:
+                edges.append(Edge(source=edge_tuple[0], target=edge_tuple[1], type="CURVE_SMOOTH"))
+                edge_set.add(edge_tuple)
         
     if nodes and edges:
         config = Config(width=1000, height=400, directed=True, physics=True, hierarchical=False)
